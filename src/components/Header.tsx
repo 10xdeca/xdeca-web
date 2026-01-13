@@ -34,8 +34,11 @@ const Header = () => {
             <a href="#community" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Community
             </a>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-              <a href="mailto:hello@tengpt.com.au">Contact</a>
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Contact
             </Button>
           </nav>
 
@@ -78,8 +81,14 @@ const Header = () => {
               >
                 Community
               </a>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full" asChild>
-                <a href="mailto:hello@tengpt.com.au">Contact</a>
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsOpen(false);
+                }}
+              >
+                Contact
               </Button>
             </div>
           </motion.nav>

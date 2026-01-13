@@ -30,8 +30,7 @@ const Contact = () => {
             >
               <a href="mailto:hello@tengpt.com.au">
                 <Mail className="mr-2 w-5 h-5" />
-                Get in Touch
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                hello@tengpt.com.au
               </a>
             </Button>
           </div>
