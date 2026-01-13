@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
-    <section className="py-32 relative bg-primary text-primary-foreground">
+    <section id="contact" className="py-32 relative bg-primary text-primary-foreground">
       <div className="container px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
