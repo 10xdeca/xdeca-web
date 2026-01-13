@@ -4,28 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-grid opacity-40" />
-      <div className="absolute inset-0 bg-gradient-radial" />
-      
-      {/* Animated glow orbs */}
-      <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-3xl"
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3]
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-3xl"
-        animate={{ 
-          scale: [1.2, 1, 1.2],
-          opacity: [0.3, 0.5, 0.3]
-        }}
-        transition={{ duration: 6, repeat: Infinity }}
-      />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
 
       <div className="container relative z-10 px-6 py-24">
         <motion.div
@@ -39,10 +18,10 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground mb-8"
           >
-            <Zap className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">AI + Software Engineering</span>
+            <Zap className="w-4 h-4" />
+            <span className="text-sm font-medium">AI + Software Engineering</span>
           </motion.div>
 
           {/* Main headline */}
@@ -50,10 +29,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8"
+            className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8 text-foreground"
           >
             Stop paying{" "}
-            <span className="text-gradient">hundreds of thousands</span>{" "}
+            <span className="text-accent">hundreds of thousands</span>{" "}
             for consultants that underdeliver.
           </motion.h1>
 
@@ -79,7 +58,7 @@ const Hero = () => {
           >
             <Button 
               size="lg" 
-              className="group bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 glow-accent"
+              className="group bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6"
             >
               Let's Talk
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -87,7 +66,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="text-lg px-8 py-6 border-border hover:bg-secondary"
+              className="text-lg px-8 py-6 border-foreground hover:bg-muted"
             >
               View Our Work
             </Button>
@@ -104,9 +83,9 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2"
+            className="w-6 h-10 border-2 border-muted-foreground/30 flex items-start justify-center p-2"
           >
-            <div className="w-1.5 h-3 rounded-full bg-primary" />
+            <div className="w-1.5 h-3 bg-foreground" />
           </motion.div>
         </motion.div>
       </div>

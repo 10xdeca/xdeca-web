@@ -4,10 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
-    <section className="py-32 relative">
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-3xl" />
-      
+    <section className="py-32 relative bg-primary text-primary-foreground">
       <div className="container px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -18,17 +15,17 @@ const Contact = () => {
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-8">
             Ready to build{" "}
-            <span className="text-gradient">something real</span>?
+            <span className="text-accent">something real</span>?
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-foreground/70 mb-12 max-w-2xl mx-auto">
             Let's talk about your idea. Get a functional prototype in your hands 
-            within weeks—not promises, not slide decks.
+            within a week—not promises, not slide decks.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg"
-              className="group bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-7 glow-accent"
+              className="group bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-7"
               asChild
             >
               <a href="mailto:hello@tengpt.com.au">
@@ -39,7 +36,7 @@ const Contact = () => {
             </Button>
           </div>
 
-          <p className="text-sm text-muted-foreground mt-8">
+          <p className="text-sm text-primary-foreground/60 mt-8">
             Based in Canberra, Australia 🇦🇺
           </p>
         </motion.div>
