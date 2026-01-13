@@ -37,7 +37,7 @@ const Contact = () => {
           </div>
 
           <p className="text-sm text-primary-foreground/60 mt-8">
-            Based in Canberra, Australia 🇦🇺
+            Based in Melbourne and Canberra, Australia 🇦🇺
           </p>
         </motion.div>
       </div>
