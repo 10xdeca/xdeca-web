@@ -48,6 +48,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="group bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Let's Talk
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -55,7 +56,8 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="text-lg px-8 py-6 border-foreground hover:bg-muted"
+              className="text-lg px-8 py-6 border-foreground hover:bg-muted hover:text-foreground"
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Our Work
             </Button>
