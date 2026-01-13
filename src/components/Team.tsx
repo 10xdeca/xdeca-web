@@ -1,26 +1,34 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 
+import alexarImg from "@/assets/alexar.png";
+import angieImg from "@/assets/angie.png";
+import nickImg from "@/assets/nick.png";
+
 const team = [
   {
     name: "Alexar Pendashteh",
     email: "alexar@tengpt.com.au",
-    role: "Founder & Engineer"
+    role: "Founder & Engineer",
+    image: alexarImg
   },
   {
     name: "Sophie Allen",
     email: "sophie@tengpt.com.au",
-    role: "Founder & Designer"
+    role: "Founder & Designer",
+    image: null
   },
   {
     name: "Dr Angie Simmons",
     email: "angie@tengpt.com.au",
-    role: "Founder & AI Specialist"
+    role: "Founder & AI Specialist",
+    image: angieImg
   },
   {
     name: "Nick Meinhold",
     email: "nick@tengpt.com.au",
-    role: "Founder & Engineer"
+    role: "Founder & Engineer",
+    image: nickImg
   }
 ];
 
@@ -54,13 +62,21 @@ const Team = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="group text-center"
             >
-              {/* Avatar placeholder with block style */}
-              <div className="relative w-32 h-32 mx-auto mb-6">
-                <div className="absolute inset-0 bg-primary flex items-center justify-center">
-                  <span className="text-3xl font-bold text-primary-foreground">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
+              {/* Avatar */}
+              <div className="relative w-32 h-32 mx-auto mb-6 overflow-hidden">
+                {member.image ? (
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-primary flex items-center justify-center">
+                    <span className="text-3xl font-bold text-primary-foreground">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <h3 className="text-xl font-bold mb-1">{member.name}</h3>
