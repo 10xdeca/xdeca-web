@@ -27,7 +27,7 @@ const team = [
   {
     name: "Nick Meinhold",
     email: "nick@tengpt.com.au",
-    role: "Founder & Engineer",
+    role: "Full-Stack Developer",
     image: nickImg
   }
 ];
@@ -47,7 +47,7 @@ const Team = () => {
             Meet the <span className="text-accent">Team</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A close-knit team of founders and developers based in Melbourne, Australia 🇦🇺, 
+            A close-knit team of innovators, designers, developers and researchers based in Melbourne, Australia 🇦🇺, 
             pushing the boundaries of what's possible.
           </p>
         </motion.div>
