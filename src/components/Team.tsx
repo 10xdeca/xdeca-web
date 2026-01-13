@@ -9,13 +9,13 @@ const team = [
   {
     name: "Alexar Pendashteh",
     email: "alexar@tengpt.com.au",
-    role: "Innovation Consultant",
+    role: "Innovator",
     image: alexarImg
   },
   {
     name: "Sophie Allen",
     email: "sophie@tengpt.com.au",
-    role: "Developer & Designer",
+    role: "Designer & Developer",
     image: null
   },
   {
@@ -27,7 +27,7 @@ const team = [
   {
     name: "Nick Meinhold",
     email: "nick@tengpt.com.au",
-    role: "Full-Stack Developer",
+    role: "Full-Stack Engineer",
     image: nickImg
   }
 ];
