@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -13,17 +13,6 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-center max-w-5xl mx-auto"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground mb-8"
-          >
-            <Zap className="w-4 h-4" />
-            <span className="text-sm font-medium">AI + Software Engineering</span>
-          </motion.div>
-
           {/* Main headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
