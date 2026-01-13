@@ -26,9 +26,7 @@ const team = [
 
 const Team = () => {
   return (
-    <section className="py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-      
+    <section className="py-32 relative bg-muted">
       <div className="container px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -38,7 +36,7 @@ const Team = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Meet the <span className="text-gradient">Team</span>
+            Meet the <span className="text-accent">Team</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A close-knit team of founders and developers based in Australia, 
@@ -56,11 +54,10 @@ const Team = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="group text-center"
             >
-              {/* Avatar placeholder with gradient */}
+              {/* Avatar placeholder with block style */}
               <div className="relative w-32 h-32 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 animate-pulse-glow" />
-                <div className="absolute inset-1 rounded-full bg-card flex items-center justify-center">
-                  <span className="text-3xl font-bold text-gradient">
+                <div className="absolute inset-0 bg-primary flex items-center justify-center">
+                  <span className="text-3xl font-bold text-primary-foreground">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>

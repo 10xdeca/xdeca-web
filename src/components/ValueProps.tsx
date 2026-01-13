@@ -5,12 +5,12 @@ const values = [
   {
     icon: Clock,
     title: "Days, Not Months",
-    description: "We move fast. Get a working prototype in your hands within weeks, not quarters."
+    description: "Get a fully functional prototype that can be put in the hands of users within a week."
   },
   {
     icon: DollarSign,
     title: "Under $10K",
-    description: "Real products at a fraction of what agencies charge. No hidden fees, no scope creep."
+    description: "Fraction of what consulting agencies charge. No hidden fees, no scope creep."
   },
   {
     icon: Code2,
@@ -19,7 +19,7 @@ const values = [
   },
   {
     icon: Users,
-    title: "Founders Who Build",
+    title: "Founders Who Ship",
     description: "Our team has shipped their own products end-to-end. We understand what it takes."
   }
 ];
@@ -36,7 +36,7 @@ const ValueProps = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Why <span className="text-gradient">TenGPT</span>?
+            Why <span className="text-accent">TenGPT</span>?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             We believe in showing, not just talking. Here's what makes us different.
@@ -53,9 +53,9 @@ const ValueProps = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="group relative"
             >
-              <div className="h-full p-8 rounded-2xl bg-card border-glow hover:border-primary/50 transition-all duration-300">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <value.icon className="w-7 h-7 text-primary" />
+              <div className="h-full p-8 bg-muted border border-border hover:border-foreground transition-all duration-300">
+                <div className="w-14 h-14 bg-primary flex items-center justify-center mb-6">
+                  <value.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{value.description}</p>

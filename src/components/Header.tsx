@@ -11,13 +11,13 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border"
     >
       <div className="container px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+            <div className="w-8 h-8 bg-primary flex items-center justify-center">
               <span className="text-lg font-bold text-primary-foreground">T</span>
             </div>
             <span className="text-xl font-bold">TenGPT</span>
@@ -34,7 +34,7 @@ const Header = () => {
             <a href="#community" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Community
             </a>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
               <a href="mailto:hello@tengpt.com.au">Contact</a>
             </Button>
           </nav>
@@ -78,7 +78,7 @@ const Header = () => {
               >
                 Community
               </a>
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground w-full" asChild>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full" asChild>
                 <a href="mailto:hello@tengpt.com.au">Contact</a>
               </Button>
             </div>

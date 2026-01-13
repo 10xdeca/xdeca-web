@@ -22,9 +22,6 @@ const events = [
 const Community = () => {
   return (
     <section className="py-32 relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
-      
       <div className="container px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -34,7 +31,7 @@ const Community = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Community <span className="text-gradient">Events</span>
+            Community <span className="text-accent">Events</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             We help host and facilitate tech events across Australia, 
@@ -52,10 +49,10 @@ const Community = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="group"
             >
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 p-6 rounded-xl hover:bg-secondary/50 transition-colors border-b border-border last:border-b-0">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 p-6 hover:bg-muted transition-colors border-b border-border last:border-b-0">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Calendar className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-primary flex items-center justify-center shrink-0">
+                    <Calendar className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
                     {event.type}

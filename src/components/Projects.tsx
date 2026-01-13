@@ -34,7 +34,7 @@ const Projects = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            What We've <span className="text-gradient">Built</span>
+            What We've <span className="text-accent">Built</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Real projects. Real impact. See what we can deliver.
@@ -51,17 +51,14 @@ const Projects = () => {
               transition={{ delay: index * 0.15, duration: 0.6 }}
               className="group"
             >
-              <div className="h-full p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 relative overflow-hidden">
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+              <div className="h-full p-8 bg-background border border-border hover:border-foreground transition-all duration-300">
                 <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6">
-                    <project.icon className="w-8 h-8 text-primary" />
+                  <div className="w-16 h-16 bg-accent flex items-center justify-center mb-6">
+                    <project.icon className="w-8 h-8 text-accent-foreground" />
                   </div>
                   
                   <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
-                  <p className="text-primary font-medium text-sm mb-4">{project.tagline}</p>
+                  <p className="text-accent font-medium text-sm mb-4">{project.tagline}</p>
                   <p className="text-muted-foreground leading-relaxed">{project.description}</p>
                 </div>
               </div>
