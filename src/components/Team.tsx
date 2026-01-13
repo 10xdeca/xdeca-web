@@ -25,7 +25,7 @@ const team = [
     image: angieImg
   },
   {
-    name: "Nick Meinhold",
+    name: "Dr Nick Meinhold",
     email: "nick@tengpt.com.au",
     role: "Full-Stack Engineer",
     image: nickImg
