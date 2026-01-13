@@ -9,19 +9,19 @@ const team = [
   {
     name: "Alexar Pendashteh",
     email: "alexar@tengpt.com.au",
-    role: "Founder & Engineer",
+    role: "Innovation Consultant",
     image: alexarImg
   },
   {
     name: "Sophie Allen",
     email: "sophie@tengpt.com.au",
-    role: "Founder & Designer",
+    role: "Developer & Designer",
     image: null
   },
   {
     name: "Dr Angie Simmons",
     email: "angie@tengpt.com.au",
-    role: "Founder & AI Specialist",
+    role: "AI Researcher",
     image: angieImg
   },
   {
@@ -47,7 +47,7 @@ const Team = () => {
             Meet the <span className="text-accent">Team</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A close-knit team of founders and developers based in Australia, 
+            A close-knit team of founders and developers based in Melbourne, Australia 🇦🇺, 
             pushing the boundaries of what's possible.
           </p>
         </motion.div>
