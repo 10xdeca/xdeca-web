@@ -5,17 +5,20 @@ const events = [
   {
     name: "Canberra Emerging Tech Hub",
     description: "Website designed and managed by Sophie",
-    type: "Community Platform"
+    type: "Workshop",
+    location: "Canberra, AU"
   },
   {
     name: "Linux and AI Tuesday Night Meetup",
     description: "Facilitated by Alexar",
-    type: "Weekly Meetup"
+    type: "Weekly Meetup",
+    location: "Online"
   },
   {
     name: "MLAI x StartSpace AI Builder Day",
     description: "Facilitated by Angie",
-    type: "Workshop"
+    type: "Monthly Meetup",
+    location: "Melbourne, AU"
   }
 ];
 
@@ -49,7 +52,7 @@ const Community = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="group"
             >
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 p-6 hover:bg-muted transition-colors border-b border-border last:border-b-0">
+              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr_140px] items-center gap-4 p-6 hover:bg-muted transition-colors border-b border-border last:border-b-0">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-primary flex items-center justify-center shrink-0">
                     <Calendar className="w-6 h-6 text-primary-foreground" />
@@ -59,16 +62,16 @@ const Community = () => {
                   </span>
                 </div>
                 
-                <div className="flex-1">
+                <div>
                   <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
                     {event.name}
                   </h3>
                   <p className="text-muted-foreground">{event.description}</p>
                 </div>
                 
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground md:justify-end">
                   <MapPin className="w-4 h-4" />
-                  <span>Canberra, AU</span>
+                  <span>{event.location}</span>
                 </div>
               </div>
             </motion.div>
