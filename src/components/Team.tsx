@@ -4,6 +4,7 @@ import { Mail } from "lucide-react";
 import alexarImg from "@/assets/alexar.png";
 import angieImg from "@/assets/angie.png";
 import nickImg from "@/assets/nick.png";
+import sophieImg from "@/assets/sophie.jpeg";
 
 const team = [
   {
@@ -16,7 +17,7 @@ const team = [
     name: "Sophie Allen",
     email: "sophie@tengpt.com.au",
     role: "Designer & Developer",
-    image: null
+    image: sophieImg
   },
   {
     name: "Dr Angie Simmons",
