@@ -6,7 +6,14 @@ const Footer = () => {
           <span className="font-semibold">xdeca</span>
           
           <p className="text-sm text-muted-foreground">
-            CC-BY, xdeca, Australia.
+            <a 
+              href="https://creativecommons.org/licenses/by/4.0/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              CC-BY
+            </a>, xdeca, Australia.
           </p>
         </div>
       </div>
