@@ -5,22 +5,6 @@ const Services = () => {
   return (
     <section className="py-32 relative">
       <div className="container px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            How We <span className="text-accent">Work</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Whether you're a community group or a commercial enterprise, 
-            we have flexible options to help bring your ideas to life.
-          </p>
-        </motion.div>
-
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Community Projects */}
           <motion.div
