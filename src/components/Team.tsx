@@ -45,7 +45,7 @@ const Team = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Meet the <span className="text-accent">Team</span>
+            meet the <span className="text-accent">team</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A close-knit team of innovators, designers, researchers, and engineers based in Australia 🇦🇺, 
