@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-/* TenGPT Design System - Clean, White, Block Colors */
+/* xdeca Design System - Clean, White, Block Colors */
 
 @layer base {
   :root {
@@ -38,7 +38,7 @@
 
     --radius: 0rem;
 
-    /* Custom TenGPT tokens */
+    /* Custom xdeca tokens */
     --block-cyan: 192 95% 45%;
     --block-orange: 15 90% 55%;
     --block-navy: 222 47% 11%;
