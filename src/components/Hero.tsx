@@ -8,8 +8,8 @@ const Dice3D = lazy(() => import("@/components/Dice3D"));
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      <div className="container relative z-10 px-6 py-24">
+    <section className="relative flex items-center justify-center overflow-hidden bg-background">
+      <div className="container relative z-10 px-6 py-16 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
