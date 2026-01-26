@@ -22,8 +22,7 @@ const Hero = () => {
           >
             <span className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight">
               <span className="text-muted-foreground/50">0</span>
-              <span className="text-accent">x</span>
-              <span className="text-foreground">DECA</span>
+              <span className="text-accent">xDECA</span>
             </span>
           </motion.div>
 
