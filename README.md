@@ -1,22 +1,22 @@
-# Welcome to your Lovable project
+# xdeca website
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This is the xdeca website. The initial version of the website was created in Loveable, an online vibe-coding tool for creating websites quickly.
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Vibe-coding with Claude Code or Loveable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Open in Claude Code or Loveable and get prompting. This purpose of the site is to explain what we do, not to be an example of code quality.
 
-Changes made via Lovable will be committed automatically to this repo.
+If you'd like to edit using Loveable, the easiest way is to ask Angie to add you to the original Lovable project that's linked to this repo. If you prefer to work independently in your own fork, unfortunately Loveable doesn't have a way to import a new project from GitHub directly, but there's a workaround where you start a new Loveable project and then overwrite it with the contents of this repo.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -59,15 +59,3 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
