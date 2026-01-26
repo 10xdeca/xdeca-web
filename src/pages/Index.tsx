@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 import ValueProps from "@/components/ValueProps";
 import Projects from "@/components/Projects";
 import Team from "@/components/Team";
@@ -13,6 +14,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <Services />
         <ValueProps />
         <section id="work">
           <Projects />
