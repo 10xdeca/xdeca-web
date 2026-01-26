@@ -28,8 +28,8 @@ const Hero = () => {
               <span className="text-accent">xDECA</span>
             </span>
             
-            {/* 3D Dice - hidden on mobile, visible on md+ */}
-            <div className="hidden md:block w-28 h-28 lg:w-36 lg:h-36">
+            {/* 3D Dice */}
+            <div className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36">
               <Suspense fallback={
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="w-12 h-12 bg-accent/20 animate-pulse" />
