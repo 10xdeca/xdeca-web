@@ -19,6 +19,12 @@ const events = [
     description: "Facilitated by Angie",
     type: "Monthly Meetup",
     location: "Melbourne, AU"
+  },
+  {
+    name: "Imagineeering - AI | Claude Code",
+    description: "Facilitated by Nick",
+    type: "Monthly Meetup",
+    location: "Melbourne, AU"
   }
 ];
 
