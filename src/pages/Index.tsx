@@ -30,8 +30,8 @@ const Index = () => {
               </h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* Community Projects */}
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Community Support */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -40,16 +40,15 @@ const Index = () => {
                 className="p-8 bg-muted border border-border"
               >
                 <h3 className="text-2xl font-bold mb-4">
-                  Community <span className="text-accent">Projects</span>
+                  Community <span className="text-accent">Support</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   We provide free tech assistance and training to volunteer-run community groups. 
-                  This option is suitable for projects that serve a social good and can be developed in the open. 
-                  Please reach out to us to discuss if your project might be a good fit for this.
+                  This option is suitable for projects that serve a social good and can be developed in the open.
                 </p>
               </motion.div>
 
-              {/* Commercial Projects */}
+              {/* Commercial Prototypes */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -58,12 +57,29 @@ const Index = () => {
                 className="p-8 bg-muted border border-border"
               >
                 <h3 className="text-2xl font-bold mb-4">
-                  Commercial <span className="text-primary">Projects</span>
+                  Commercial <span className="text-primary">Prototypes</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Stop paying hundreds of thousands for consultants that underdeliver. With the help of AI tools, 
-                  we can deliver fully functional prototypes in days for under $10k. Or if you prefer, we can 
-                  deliver personalised training sessions to empower your team with the skills and knowledge to do the same.
+                  Stop paying hundreds of thousands for consultants that underdeliver. With the right combination 
+                  of AI tools and software engineering fundamentals, we can deliver fully functional prototypes 
+                  in days for under $10k to help validate your idea before you commit.
+                </p>
+              </motion.div>
+
+              {/* Training and Workshops */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="p-8 bg-muted border border-border"
+              >
+                <h3 className="text-2xl font-bold mb-4">
+                  Training and <span className="text-accent">Workshops</span>
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  We deliver personalised training sessions to empower individuals and teams with the skills 
+                  and knowledge to take advantage of the latest AI tools and techniques without getting locked-in.
                 </p>
               </motion.div>
             </div>
