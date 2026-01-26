@@ -1,30 +1,34 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, ExternalLink } from "lucide-react";
 
 const events = [
   {
     name: "Canberra Emerging Tech Hub",
     description: "Website designed and managed by Sophie",
     type: "Workshop",
-    location: "Canberra, AU"
+    location: "Canberra, AU",
+    url: "https://skillstudio.com.au/"
   },
   {
-    name: "Linux and AI Tuesday Night Meetup",
+    name: "Linux & AI Tuesday Conversations",
     description: "Facilitated by Alexar",
     type: "Weekly Meetup",
-    location: "Online"
+    location: "Online",
+    url: "https://linuxvictoria.org/posts/lait-night-chat-linux-and-ai/"
   },
   {
     name: "MLAI x StartSpace AI Builder Day",
     description: "Facilitated by Angie",
     type: "Monthly Meetup",
-    location: "Melbourne, AU"
+    location: "Melbourne, AU",
+    url: "https://events.humanitix.com/mlai-x-startspace-monthly"
   },
   {
     name: "Imagineeering - AI | Claude Code",
     description: "Facilitated by Nick",
     type: "Monthly Meetup",
-    location: "Melbourne, AU"
+    location: "Melbourne, AU",
+    url: "https://www.meetup.com/imagineeering-ai-claude-code/"
   }
 ];
 
@@ -69,9 +73,15 @@ const Community = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
+                  <a 
+                    href={event.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-xl font-bold mb-1 group-hover:text-primary transition-colors inline-flex items-center gap-2"
+                  >
                     {event.name}
-                  </h3>
+                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
                   <p className="text-muted-foreground">{event.description}</p>
                 </div>
                 
