@@ -36,7 +36,7 @@ const ValueProps = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-black tracking-tight font-mono mb-6">
-            our <span className="text-accent">approach</span>
+            our<span className="text-muted-foreground/50">_</span><span className="text-accent">approach</span>
           </h2>
         </motion.div>
 
