@@ -26,7 +26,7 @@ const Index = () => {
               className="text-center mb-12"
             >
             <h2 className="text-4xl md:text-5xl font-black tracking-tight font-mono mb-12">
-                what we <span className="text-accent">do</span>
+                what<span className="text-muted-foreground/50">_</span>we<span className="text-muted-foreground/50">_</span><span className="text-accent">do</span>
               </h2>
             </motion.div>
 
