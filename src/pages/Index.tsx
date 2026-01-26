@@ -62,7 +62,7 @@ const Index = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   Stop paying hundreds of thousands for consultants that underdeliver. With the right combination 
                   of AI tools and software engineering fundamentals, we can deliver fully functional prototypes 
-                  in days for under $10k to help validate your idea before you commit.
+                  for under $10k in a matter of days to help validate your idea before you commit.
                 </p>
               </motion.div>
 
