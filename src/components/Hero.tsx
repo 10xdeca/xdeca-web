@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 
 // Lazy load Dice3D to prevent issues on unsupported devices
 const Dice3D = lazy(() => import("@/components/Dice3D"));
 
 const Hero = () => {
-  const [diceResult, setDiceResult] = useState<number | null>(null);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       <div className="container relative z-10 px-6 py-24">
@@ -38,23 +36,12 @@ const Hero = () => {
                 </div>
               }>
                 <Dice3D 
-                  onRollComplete={(value) => setDiceResult(value)} 
+                  onRollComplete={(value) => console.log(`Rolled: 0x${value.toString(16).toUpperCase()}`)} 
                   className="w-full h-full"
                 />
               </Suspense>
             </div>
           </motion.div>
-
-          {/* Dice result indicator */}
-          {diceResult !== null && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-4 text-accent font-mono text-lg"
-            >
-              Rolled: 0x{diceResult.toString(16).toUpperCase()}
-            </motion.div>
-          )}
 
           {/* Main headline */}
           <motion.h1
