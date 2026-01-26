@@ -36,10 +36,10 @@ const ValueProps = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Why <span className="text-accent">xdeca</span>?
+            Our <span className="text-accent">approach</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We believe in showing, not just talking. Here's what makes us different.
+            What we do: Community Projects, Commercial Projects
           </p>
         </motion.div>
 
