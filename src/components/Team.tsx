@@ -44,7 +44,7 @@ const Team = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight font-mono mb-6">
             meet the <span className="text-accent">team</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
