@@ -23,7 +23,7 @@ const Services = () => {
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 We provide free tech assistance and training to volunteer-run community groups. 
-                This option is suitable for projects that can be developed in the open. 
+                This option is suitable for projects that serve a social good and can be developed in the open. 
                 Please reach out to us to discuss if your project might be a good fit for this.
               </p>
             </div>
@@ -44,14 +44,10 @@ const Services = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
                 Commercial <span className="text-primary">Projects</span>
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Stop paying hundreds of thousands for consultants that underdeliver.
-              </p>
               <p className="text-muted-foreground leading-relaxed">
-                We can deliver personalised training sessions to upskill your team with the skills 
-                and knowledge in the latest AI tools to prove concepts themselves{" "}
-                <em className="text-foreground">before</em> committing to large projects. 
-                Or if you prefer, we can prototype it for you.
+                Stop paying hundreds of thousands for consultants that underdeliver. With the help of AI tools, 
+                we can deliver fully functional prototypes in days for under $10k. Or if you prefer, we can 
+                deliver personalised training sessions to empower your team with the skills and knowledge to do the same.
               </p>
             </div>
           </motion.div>
