@@ -12,7 +12,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-8">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight font-mono mb-8">
             ready to <span className="text-accent">build</span>?
           </h2>
           <p className="text-xl text-primary-foreground/70 mb-12 max-w-2xl mx-auto">

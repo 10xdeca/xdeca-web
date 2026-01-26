@@ -35,7 +35,7 @@ const ValueProps = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight font-mono mb-6">
             our <span className="text-accent">approach</span>
           </h2>
         </motion.div>
