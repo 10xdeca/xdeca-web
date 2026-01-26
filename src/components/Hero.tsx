@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, lazy, Suspense } from "react";
+
+// Lazy load Dice3D to prevent issues on unsupported devices
+const Dice3D = lazy(() => import("@/components/Dice3D"));
 
 const Hero = () => {
+  const [diceResult, setDiceResult] = useState<number | null>(null);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-
       <div className="container relative z-10 px-6 py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -13,18 +18,43 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-center max-w-5xl mx-auto"
         >
-          {/* Centered 0xDECA branding */}
+          {/* Centered 0xDECA branding with dice on larger screens */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="mb-12"
+            className="mb-12 flex items-center justify-center gap-4 md:gap-8"
           >
             <span className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight">
               <span className="text-muted-foreground/50">0</span>
               <span className="text-accent">xDECA</span>
             </span>
+            
+            {/* 3D Dice - hidden on mobile, visible on md+ */}
+            <div className="hidden md:block w-24 h-24 lg:w-32 lg:h-32">
+              <Suspense fallback={
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-accent/20 animate-pulse" />
+                </div>
+              }>
+                <Dice3D 
+                  onRollComplete={(value) => setDiceResult(value)} 
+                  className="w-full h-full"
+                />
+              </Suspense>
+            </div>
           </motion.div>
+
+          {/* Dice result indicator */}
+          {diceResult !== null && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-4 text-accent font-mono text-lg"
+            >
+              Rolled: 0x{diceResult.toString(16).toUpperCase()}
+            </motion.div>
+          )}
 
           {/* Main headline */}
           <motion.h1
