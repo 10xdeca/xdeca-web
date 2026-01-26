@@ -13,12 +13,26 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-center max-w-5xl mx-auto"
         >
+          {/* Centered 0xDECA branding */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="mb-12"
+          >
+            <span className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight">
+              <span className="text-muted-foreground/50">0</span>
+              <span className="text-accent">x</span>
+              <span className="text-foreground">DECA</span>
+            </span>
+          </motion.div>
+
           {/* Main headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8 text-foreground"
+            className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.95] mb-8 text-foreground"
           >
             Stop paying{" "}
             <span className="text-accent">hundreds of thousands</span>{" "}

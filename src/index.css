@@ -26,7 +26,7 @@
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 15 90% 55%;
+    --accent: 152 70% 35%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -40,7 +40,7 @@
 
     /* Custom xdeca tokens */
     --block-cyan: 192 95% 45%;
-    --block-orange: 15 90% 55%;
+    --block-green: 152 70% 35%;
     --block-navy: 222 47% 11%;
 
     --sidebar-background: 0 0% 100%;
@@ -66,7 +66,7 @@
     --secondary-foreground: 210 40% 98%;
     --muted: 222 30% 18%;
     --muted-foreground: 215 20% 55%;
-    --accent: 15 90% 60%;
+    --accent: 152 70% 40%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
