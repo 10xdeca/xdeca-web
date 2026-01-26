@@ -4,28 +4,28 @@ import { Calendar, MapPin, ExternalLink } from "lucide-react";
 const events = [
   {
     name: "Canberra Emerging Tech Hub",
-    description: "Website designed and managed by Sophie",
+    description: "Website designed and managed by Sophie Allen",
     type: "Workshop",
     location: "Canberra, AU",
     url: "https://skillstudio.com.au/"
   },
   {
     name: "Linux & AI Tuesday Conversations",
-    description: "Facilitated by Alexar",
+    description: "Facilitated by Alexar Pendashteh",
     type: "Weekly Meetup",
     location: "Online",
     url: "https://linuxvictoria.org/posts/lait-night-chat-linux-and-ai/"
   },
   {
     name: "MLAI x StartSpace AI Builder Day",
-    description: "Facilitated by Angie",
+    description: "Facilitated by Dr Angie Simmons",
     type: "Monthly Meetup",
     location: "Melbourne, AU",
     url: "https://events.humanitix.com/mlai-x-startspace-monthly"
   },
   {
     name: "Imagineeering - AI | Claude Code",
-    description: "Facilitated by Nick",
+    description: "Facilitated by Dr Nicholas Meinhold",
     type: "Monthly Meetup",
     location: "Melbourne, AU",
     url: "https://www.meetup.com/imagineeering-ai-claude-code/"
