@@ -61,8 +61,7 @@ const Index = () => {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   We help organisations test ideas without breaking their budget. We blend AI tools with 
-                  good old software engineering fundamentals to deliver fully functional prototypes that 
-                  push the boundaries of what's possible.
+                  good old software engineering fundamentals to deliver fully functional prototypes.
                 </p>
               </motion.div>
 
