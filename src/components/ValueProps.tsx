@@ -38,9 +38,6 @@ const ValueProps = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             our <span className="text-accent">approach</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Here's what makes us different.
-          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

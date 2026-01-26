@@ -13,8 +13,7 @@ const Contact = () => {
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-8">
-            Ready to build{" "}
-            <span className="text-accent">something real</span>?
+            ready to <span className="text-accent">build</span>?
           </h2>
           <p className="text-xl text-primary-foreground/70 mb-12 max-w-2xl mx-auto">
             Let's talk about your idea. Get a functional prototype in your hands 
