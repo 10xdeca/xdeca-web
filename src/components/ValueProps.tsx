@@ -38,11 +38,6 @@ const ValueProps = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Our <span className="text-accent">approach</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">What we do:</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
-            <span className="text-xl font-semibold">Community Projects</span>
-            <span className="text-xl font-semibold">Commercial Projects</span>
-          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
