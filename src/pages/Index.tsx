@@ -77,7 +77,7 @@ const Index = () => {
                   Community <span className="text-accent">Support</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We provide free tech assistance and training to volunteer-run community groups. 
+                  We provide free tech assistance and training to community groups.
                   This option is suitable for projects that serve a social good and can be developed in the open.
                 </p>
               </motion.div>
