@@ -23,7 +23,7 @@ const Hero = () => {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="mb-12 flex items-center justify-center gap-4 md:gap-8"
           >
-            <span className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight">
+            <span className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight font-mono">
               <span className="text-muted-foreground/50">0</span>
               <span className="text-accent">xDECA</span>
             </span>
