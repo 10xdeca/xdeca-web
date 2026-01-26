@@ -31,7 +31,7 @@ const Index = () => {
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {/* Community Support */}
+              {/* Training and Workshops */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -40,11 +40,11 @@ const Index = () => {
                 className="p-8 bg-muted border border-border"
               >
                 <h3 className="text-2xl font-bold mb-4">
-                  Community <span className="text-accent">Support</span>
+                  Training and <span className="text-accent">Workshops</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We provide free tech assistance and training to volunteer-run community groups. 
-                  This option is suitable for projects that serve a social good and can be developed in the open.
+                  We deliver personalised training sessions to empower people with the skills 
+                  and knowledge to take advantage of the latest AI tools and techniques without getting locked-in.
                 </p>
               </motion.div>
 
@@ -60,13 +60,12 @@ const Index = () => {
                   Commercial <span className="text-accent">Prototypes</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Stop paying hundreds of thousands for consultants that underdeliver. With the right combination 
-                  of AI tools and software engineering fundamentals, we can deliver fully functional prototypes 
-                  for under $10k in a matter of days.
+                  Our team of innovators, designers, researchers, and engineers can deliver fully functional 
+                  prototypes for under $10k in a matter of days.
                 </p>
               </motion.div>
 
-              {/* Training and Workshops */}
+              {/* Community Support */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -75,11 +74,11 @@ const Index = () => {
                 className="p-8 bg-muted border border-border"
               >
                 <h3 className="text-2xl font-bold mb-4">
-                  Training and <span className="text-accent">Workshops</span>
+                  Community <span className="text-accent">Support</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We deliver personalised training sessions to empower individuals and teams with the skills 
-                  and knowledge to take advantage of the latest AI tools and techniques without getting locked-in.
+                  We provide free tech assistance and training to volunteer-run community groups. 
+                  This option is suitable for projects that serve a social good and can be developed in the open.
                 </p>
               </motion.div>
             </div>
