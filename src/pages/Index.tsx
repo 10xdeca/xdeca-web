@@ -57,7 +57,7 @@ const Index = () => {
                 className="p-8 bg-muted border border-border"
               >
                 <h3 className="text-2xl font-bold mb-4">
-                  Commercial <span className="text-primary">Prototypes</span>
+                  Commercial <span className="text-accent">Prototypes</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Stop paying hundreds of thousands for consultants that underdeliver. With the right combination 
