@@ -50,7 +50,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            We help businesses create fully functional prototypes in{" "}
+            We help organisations create fully functional prototypes in{" "}
             <span className="text-accent font-semibold">days, not months</span>.
             Know if your project will succeed before you commit.
           </motion.p>
