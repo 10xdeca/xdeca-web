@@ -60,8 +60,9 @@ const Index = () => {
                   Commercial <span className="text-accent">Prototypes</span>
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our team of innovators, designers, researchers, and engineers can deliver fully functional 
-                  prototypes for under $10k in a matter of days.
+                  We help organisations test ideas without breaking their budget. We blend AI tools with 
+                  good old software engineering fundamentals to deliver fully functional prototypes that 
+                  push the boundaries of what's possible.
                 </p>
               </motion.div>
 
