@@ -43,28 +43,15 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Main headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.95] mb-8 text-foreground"
-          >
-            Stop paying{" "}
-            <span className="text-accent">hundreds of thousands</span>{" "}
-            for consultants that underdeliver.
-          </motion.h1>
-
           {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
             className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            Fully functional prototypes for{" "}
-            <span className="text-foreground font-semibold">under $10k</span> in{" "}
-            <span className="text-foreground font-semibold">days, not months</span>.
+            We help businesses create fully functional prototypes in{" "}
+            <span className="text-accent font-semibold">days, not months</span>.
             Know if your project will succeed before you commit.
           </motion.p>
 
