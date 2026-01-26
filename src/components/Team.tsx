@@ -9,25 +9,25 @@ import sophieImg from "@/assets/sophie.jpeg";
 const team = [
   {
     name: "Alexar Pendashteh",
-    email: "alexar@tengpt.com.au",
+    email: "alexar@xdeca.com",
     role: "Innovator",
     image: alexarImg
   },
   {
     name: "Sophie Allen",
-    email: "sophie@tengpt.com.au",
+    email: "sophie@xdeca.com",
     role: "Designer & Developer",
     image: sophieImg
   },
   {
     name: "Dr Angie Simmons",
-    email: "angie@tengpt.com.au",
+    email: "angie@xdeca.com",
     role: "AI Researcher",
     image: angieImg
   },
   {
     name: "Dr Nick Meinhold",
-    email: "nick@tengpt.com.au",
+    email: "nick@xdeca.com",
     role: "Full-Stack Engineer",
     image: nickImg
   }
