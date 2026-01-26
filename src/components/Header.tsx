@@ -16,11 +16,8 @@ const Header = () => {
       <div className="container px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary flex items-center justify-center">
-              <span className="text-sm font-bold text-primary-foreground">0x</span>
-            </div>
-            <span className="text-xl font-bold">xdeca</span>
+          <a href="/" className="text-xl font-bold">
+            xdeca
           </a>
 
           {/* Desktop Nav */}
