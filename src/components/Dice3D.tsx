@@ -27,29 +27,24 @@ const Decahedron = ({ onRollComplete }: DiceProps) => {
     if (isRolling) return;
     
     setIsRolling(true);
-    setVelocity(8); // Initial upward velocity
+    setVelocity(4); // Reduced upward velocity for subtle jump
     
-    // Random spin speeds
+    // Reduced spin speeds for faster, subtler roll
     setSpinSpeed({
-      x: (Math.random() - 0.5) * 0.5,
-      y: (Math.random() - 0.5) * 0.5,
-      z: (Math.random() - 0.5) * 0.5,
+      x: (Math.random() - 0.5) * 0.3,
+      y: (Math.random() - 0.5) * 0.3,
+      z: (Math.random() - 0.5) * 0.3,
     });
     
-    // Generate random result and target rotation
+    // Generate random result
     const result = getCryptoRandom();
-    const targetX = Math.PI * 2 * (2 + Math.random() * 2);
-    const targetY = Math.PI * 2 * (2 + Math.random() * 2);
-    const targetZ = Math.PI * 2 * (1 + Math.random());
     
-    setTargetRotation({ x: targetX, y: targetY, z: targetZ });
-    
-    // Complete roll after animation
+    // Complete roll after animation (shorter duration)
     setTimeout(() => {
       setIsRolling(false);
       setSpinSpeed({ x: 0, y: 0, z: 0 });
       onRollComplete?.(result);
-    }, 2000);
+    }, 800);
   }, [isRolling, onRollComplete]);
 
   useFrame((_, delta) => {
