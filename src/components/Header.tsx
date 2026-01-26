@@ -18,7 +18,7 @@ const Header = () => {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary flex items-center justify-center">
-              <span className="text-lg font-bold text-primary-foreground">X</span>
+              <span className="text-sm font-bold text-primary-foreground">0x</span>
             </div>
             <span className="text-xl font-bold">xdeca</span>
           </a>

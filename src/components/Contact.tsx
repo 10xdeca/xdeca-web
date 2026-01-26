@@ -23,14 +23,14 @@ const Contact = () => {
 
           <div className="flex flex-col gap-4 justify-center items-center">
             <a 
-              href="mailto:hello@xdeca.com"
+              href="mailto:team@xdeca.com"
               className="no-underline"
               draggable="false"
               onDragStart={(e) => e.preventDefault()}
             >
               <span className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-4 rounded-md transition-colors select-text [-webkit-user-select:text]">
                 <Mail className="w-5 h-5 flex-shrink-0 pointer-events-none" />
-                hello@xdeca.com
+                team@xdeca.com
               </span>
             </a>
           </div>
