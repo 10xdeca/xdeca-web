@@ -90,7 +90,7 @@ const Decahedron = ({ onRollComplete }: DiceProps) => {
   return (
     <group onClick={rollDice}>
       <mesh ref={meshRef}>
-        <dodecahedronGeometry args={[1.2, 0]} />
+        <dodecahedronGeometry args={[1.05, 0]} />
         <meshPhongMaterial
           color="#22c55e"
           flatShading
@@ -99,7 +99,7 @@ const Decahedron = ({ onRollComplete }: DiceProps) => {
         />
       </mesh>
       <mesh ref={wireframeRef}>
-        <dodecahedronGeometry args={[1.2, 0]} />
+        <dodecahedronGeometry args={[1.05, 0]} />
         <meshBasicMaterial
           color="#ffffff"
           wireframe
