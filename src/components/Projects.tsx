@@ -24,14 +24,14 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 relative">
+    <section id="projects" className="py-16 relative">
       <div className="container px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             What We've <span className="text-accent">Built</span>
