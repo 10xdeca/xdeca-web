@@ -31,7 +31,7 @@ const Hero = () => {
             </span>
             
             {/* 3D Dice - hidden on mobile, visible on md+ */}
-            <div className="hidden md:block w-24 h-24 lg:w-32 lg:h-32">
+            <div className="hidden md:block w-28 h-28 lg:w-36 lg:h-36">
               <Suspense fallback={
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="w-12 h-12 bg-accent/20 animate-pulse" />
