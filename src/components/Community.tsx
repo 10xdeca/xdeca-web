@@ -34,14 +34,14 @@ const events = [
 
 const Community = () => {
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden">
       <div className="container px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Community <span className="text-accent">Events</span>

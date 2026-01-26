@@ -16,7 +16,7 @@ const Index = () => {
         <Hero />
         
         {/* Community Projects */}
-        <section className="py-16 relative">
+        <section className="py-32 relative">
           <div className="container px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -38,7 +38,7 @@ const Index = () => {
         </section>
 
         {/* Commercial Projects */}
-        <section className="py-16 relative">
+        <section className="py-32 relative">
           <div className="container px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
