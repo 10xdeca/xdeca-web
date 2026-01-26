@@ -25,8 +25,8 @@ const Index = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-12">
-                What we <span className="text-accent">do</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-12">
+                what we <span className="text-accent">do</span>
               </h2>
             </motion.div>
 

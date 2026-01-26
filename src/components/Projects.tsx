@@ -34,7 +34,7 @@ const Projects = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            What We've <span className="text-accent">Built</span>
+            what we've <span className="text-accent">built</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Real projects. Real impact. See what we can deliver.

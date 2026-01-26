@@ -44,7 +44,7 @@ const Community = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Community <span className="text-accent">Events</span>
+            community <span className="text-accent">events</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             We help host and facilitate tech events across Australia, 

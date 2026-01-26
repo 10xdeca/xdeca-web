@@ -36,7 +36,7 @@ const ValueProps = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="text-accent">approach</span>
+            our <span className="text-accent">approach</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Here's what makes us different.
