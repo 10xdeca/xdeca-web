@@ -1,0 +1,111 @@
+name: Notify Telegram on PR, Issue, and Comment Events
+
+on:
+  pull_request:
+    types: [opened, closed]
+  issues:
+    types: [opened, closed]
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Message
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+
+          EVENT_NAME: ${{ github.event_name }}
+          ACTION: ${{ github.event.action }}
+
+          IS_MERGED: ${{ github.event.pull_request.merged }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_URL: ${{ github.event.comment.html_url }}
+
+          OLD_COMMENT_BODY: ${{ github.event.changes.body.from }}
+        run: |
+          echo "🔍 Event: $EVENT_NAME"
+          echo "🔍 Action: $ACTION"
+
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "🛠️ Pull request event"
+
+            if [ "$IS_MERGED" = "true" ]; then
+              TEXT="✅ *PR Merged!* by $PR_AUTHOR: *$PR_TITLE*%0ALink: $PR_URL"
+            else
+              TEXT="🆕 *New PR* by $PR_AUTHOR: *$PR_TITLE*%0ALink: $PR_URL"
+            fi
+
+          elif [ "$EVENT_NAME" = "issues" ]; then
+            echo "📌 Issue event"
+
+            if [ "$ACTION" = "opened" ]; then
+              TEXT="📝 *New Issue* by $ISSUE_AUTHOR: *$ISSUE_TITLE*%0ALink: $ISSUE_URL"
+            elif [ "$ACTION" = "closed" ]; then
+              TEXT="✅ *Issue Closed* by $ISSUE_AUTHOR: *$ISSUE_TITLE*%0ALink: $ISSUE_URL"
+            else
+              echo "⏭️ Unsupported issue action — skipping"
+              exit 0
+            fi
+
+          elif [ "$EVENT_NAME" = "issue_comment" ]; then
+            echo "💬 Issue comment event"
+
+            # --- NETLIFY BOT HANDLING ---
+            if [ "$COMMENT_AUTHOR" = "netlify[bot]" ]; then
+              echo "🤖 Netlify bot detected"
+
+              # Only react to edits
+              if [ "$ACTION" != "edited" ]; then
+                echo "⏭️ Netlify comment not edited yet — skipping"
+                exit 0
+              fi
+
+              # Send ONLY when Deploy Preview appears for the first time
+              if echo "$COMMENT_BODY" | grep -q 'Deploy Preview' && \
+                 ! echo "$OLD_COMMENT_BODY" | grep -q 'Deploy Preview'; then
+
+                PREVIEW_URL=$(echo "$COMMENT_BODY" | grep -Eo 'https?://[^ )]+' | head -n1)
+                TEXT="🚀 *Netlify Deploy Preview Ready*%0ALink: ${PREVIEW_URL:-$COMMENT_URL}"
+                echo "✅ First Deploy Preview detected — sending Telegram message"
+
+              else
+                echo "⏭️ Duplicate Netlify edit — skipping"
+                exit 0
+              fi
+
+            # --- NORMAL COMMENTS ---
+            else
+              SHORT_BODY=$(echo "$COMMENT_BODY" | head -c 200)
+              TEXT="💬 *New Comment* by $COMMENT_AUTHOR:%0A${SHORT_BODY}%0ALink: $COMMENT_URL"
+            fi
+
+          else
+            echo "⚠️ Unsupported event — exiting"
+            exit 0
+          fi
+
+          # Telegram topic support (optional)
+          THREAD_ARG=""
+          if [ -n "$TELEGRAM_THREAD_ID" ]; then
+            THREAD_ARG="-d message_thread_id=$TELEGRAM_THREAD_ID"
+          fi
+
+          echo "📤 Sending Telegram message"
+          curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+            -d chat_id="$TELEGRAM_CHAT_ID" \
+            $THREAD_ARG \
+            -d text="$TEXT" \
+            -d parse_mode=Markdown
