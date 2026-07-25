@@ -1,52 +1,14 @@
 import { motion } from "framer-motion";
-import { lazy, Suspense, useState } from "react";
-import AuroraBackground from "@/components/backgrounds/AuroraBackground";
+import { lazy, Suspense } from "react";
 import ParticleNetworkBackground from "@/components/backgrounds/ParticleNetworkBackground";
-import HexGridBackground from "@/components/backgrounds/HexGridBackground";
-import FloatingPolyhedraBackground from "@/components/backgrounds/FloatingPolyhedraBackground";
-import AuroraHexParticlesBackground from "@/components/backgrounds/AuroraHexParticlesBackground";
 
 // Lazy load Dice3D to prevent issues on unsupported devices
 const Dice3D = lazy(() => import("@/components/Dice3D"));
 
-// TEMP: demo switcher for picking a hero background — remove once a variant is chosen
-const BACKGROUND_DEMOS = [
-  { label: "None", Component: null },
-  { label: "1 · Aurora", Component: AuroraBackground },
-  { label: "2 · Particles", Component: ParticleNetworkBackground },
-  { label: "3 · Hex grid", Component: HexGridBackground },
-  { label: "4 · Floating polyhedra", Component: FloatingPolyhedraBackground },
-  { label: "5 · Aurora + Hex Particles", Component: AuroraHexParticlesBackground },
-] as const;
-
 const Hero = () => {
-  const [demoIndex, setDemoIndex] = useState(2);
-  const ActiveBackground = BACKGROUND_DEMOS[demoIndex].Component;
-
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* TEMP: demo switcher, remove with BACKGROUND_DEMOS once a background is chosen */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-2 bg-background/90 backdrop-blur-sm border border-border px-3 py-2 rounded-full shadow-lg">
-        {BACKGROUND_DEMOS.map((demo, i) => (
-          <button
-            key={demo.label}
-            onClick={() => setDemoIndex(i)}
-            className={`text-xs px-3 py-1.5 rounded-full transition-colors ${
-              demoIndex === i
-                ? "bg-accent text-accent-foreground"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            {demo.label}
-          </button>
-        ))}
-      </div>
-
-      {ActiveBackground && (
-        <Suspense fallback={null}>
-          <ActiveBackground />
-        </Suspense>
-      )}
+      <ParticleNetworkBackground />
 
       <div className="container relative z-10 px-6">
         <motion.div
