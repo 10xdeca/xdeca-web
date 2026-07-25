@@ -1,15 +1,54 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
+import AuroraBackground from "@/components/backgrounds/AuroraBackground";
+import ParticleNetworkBackground from "@/components/backgrounds/ParticleNetworkBackground";
+import HexGridBackground from "@/components/backgrounds/HexGridBackground";
+import FloatingPolyhedraBackground from "@/components/backgrounds/FloatingPolyhedraBackground";
+import AuroraHexParticlesBackground from "@/components/backgrounds/AuroraHexParticlesBackground";
 
 // Lazy load Dice3D to prevent issues on unsupported devices
 const Dice3D = lazy(() => import("@/components/Dice3D"));
 
+// TEMP: demo switcher for picking a hero background — remove once a variant is chosen
+const BACKGROUND_DEMOS = [
+  { label: "None", Component: null },
+  { label: "1 · Aurora", Component: AuroraBackground },
+  { label: "2 · Particles", Component: ParticleNetworkBackground },
+  { label: "3 · Hex grid", Component: HexGridBackground },
+  { label: "4 · Floating polyhedra", Component: FloatingPolyhedraBackground },
+  { label: "5 · Aurora + Hex Particles", Component: AuroraHexParticlesBackground },
+] as const;
+
 const Hero = () => {
+  const [demoIndex, setDemoIndex] = useState(2);
+  const ActiveBackground = BACKGROUND_DEMOS[demoIndex].Component;
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      <div className="container relative z-10 px-6 py-24">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* TEMP: demo switcher, remove with BACKGROUND_DEMOS once a background is chosen */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-2 bg-background/90 backdrop-blur-sm border border-border px-3 py-2 rounded-full shadow-lg">
+        {BACKGROUND_DEMOS.map((demo, i) => (
+          <button
+            key={demo.label}
+            onClick={() => setDemoIndex(i)}
+            className={`text-xs px-3 py-1.5 rounded-full transition-colors ${
+              demoIndex === i
+                ? "bg-accent text-accent-foreground"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {demo.label}
+          </button>
+        ))}
+      </div>
+
+      {ActiveBackground && (
+        <Suspense fallback={null}>
+          <ActiveBackground />
+        </Suspense>
+      )}
+
+      <div className="container relative z-10 px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -27,7 +66,7 @@ const Hero = () => {
               <span className="text-muted-foreground/50">0</span>
               <span className="text-accent">xDECA</span>
             </span>
-            
+
             {/* 3D Dice */}
             <div className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36">
               <Suspense fallback={
@@ -35,49 +74,30 @@ const Hero = () => {
                   <div className="w-12 h-12 bg-accent/20 animate-pulse" />
                 </div>
               }>
-                <Dice3D 
-                  onRollComplete={(value) => console.log(`Rolled: 0x${value.toString(16).toUpperCase()}`)} 
+                <Dice3D
+                  onRollComplete={(value) => console.log(`Rolled: 0x${value.toString(16).toUpperCase()}`)}
                   className="w-full h-full"
                 />
               </Suspense>
             </div>
           </motion.div>
 
-          {/* Subheadline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
-          >
-            We help organisations create fully functional prototypes in{" "}
-            <span className="text-accent font-semibold">days, not months</span>.
-            Know if your project will succeed before you commit.
-          </motion.p>
-
-          {/* CTA */}
+          {/* Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="flex flex-col items-center gap-3"
           >
-            <Button 
-              size="lg" 
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            <a
+              href="https://localai.xdeca.com"
+              className="text-lg md:text-xl text-accent hover:underline underline-offset-4 transition-colors"
             >
-              Let's Talk
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="text-lg px-8 py-6 border-foreground hover:bg-muted hover:text-foreground"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View Our Work
-            </Button>
+              localai.xdeca.com
+            </a>
+            <span className="text-sm md:text-base text-muted-foreground">
+              contact[at]xdeca.com
+            </span>
           </motion.div>
         </motion.div>
       </div>
