@@ -27,12 +27,27 @@ const ParticleNetworkBackground = () => {
 
     const COUNT = 160;
     const LINK_DIST = 150;
+    const MOUSE_RADIUS = 180;
     const particles = Array.from({ length: COUNT }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       vx: (Math.random() - 0.5) * 0.25,
       vy: (Math.random() - 0.5) * 0.25,
     }));
+
+    const mouse = { x: 0, y: 0, active: false };
+
+    const handlePointerMove = (e: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    };
+    const handlePointerLeave = () => {
+      mouse.active = false;
+    };
+    window.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("pointerleave", handlePointerLeave);
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
@@ -42,6 +57,17 @@ const ParticleNetworkBackground = () => {
         p.y += p.vy;
         if (p.x < 0 || p.x > width) p.vx *= -1;
         if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        if (mouse.active) {
+          const dx = p.x - mouse.x;
+          const dy = p.y - mouse.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < MOUSE_RADIUS && dist > 0.01) {
+            const force = (1 - dist / MOUSE_RADIUS) * 1.8;
+            p.x += (dx / dist) * force;
+            p.y += (dy / dist) * force;
+          }
+        }
       }
 
       for (let i = 0; i < COUNT; i++) {
@@ -60,10 +86,44 @@ const ParticleNetworkBackground = () => {
         }
       }
 
+      if (mouse.active) {
+        for (const p of particles) {
+          const dist = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+          if (dist < MOUSE_RADIUS) {
+            ctx.strokeStyle = `hsl(${accent} / ${0.35 * (1 - dist / MOUSE_RADIUS)})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(mouse.x, mouse.y);
+            ctx.lineTo(p.x, p.y);
+            ctx.stroke();
+          }
+        }
+      }
+
       for (const p of particles) {
-        ctx.fillStyle = `hsl(${accent} / 0.5)`;
+        let radius = 3;
+        let alpha = 0.5;
+        if (mouse.active) {
+          const dist = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+          if (dist < MOUSE_RADIUS) {
+            const t = 1 - dist / MOUSE_RADIUS;
+            radius = 3 + t * 2.5;
+            alpha = 0.5 + t * 0.5;
+          }
+        }
+        ctx.fillStyle = `hsl(${accent} / ${alpha})`;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (mouse.active) {
+        const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, MOUSE_RADIUS);
+        gradient.addColorStop(0, `hsl(${accent} / 0.08)`);
+        gradient.addColorStop(1, `hsl(${accent} / 0)`);
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(mouse.x, mouse.y, MOUSE_RADIUS, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -75,6 +135,8 @@ const ParticleNetworkBackground = () => {
 
     return () => {
       window.removeEventListener("resize", resize);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerleave", handlePointerLeave);
       cancelAnimationFrame(animationId);
     };
   }, []);
